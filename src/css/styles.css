@@ -1,18 +1,142 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+* {
+  box-sizing: border-box;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+:root {
+  --bc-btn: #4e75ff;
+  --hover-btn: #6c8cff;
+  --color-text-btn: #ffffff;
+  --border-inp: #808080;
+  --txt-color: #2e2f42;
+  --secondary-bg: #f6f6fe;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  max-width: 1128px;
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-item {
+  flex-basis: 360px;
+  height: 200px;
+
+  transition: transform 0.3s ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.04);
+  }
+}
+
+.gallery-link {
+  display: block;
+  margin: 0 auto;
+}
+
+input,
+textarea {
+  border: 1px solid var(--border-inp);
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  margin-bottom: 8px;
+  padding: 8px 16px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--txt-color);
+}
+
+button {
+  border-radius: 8px;
+  padding: 8px 16px;
+
+  height: 40px;
+  background-color: var(--bc-btn);
+  color: var(--color-text-btn);
+  cursor: pointer;
+  outline: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border: transparent;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--hover-btn);
+}
+
+input::placeholder {
+  color: var(--txt-color);
+}
+
+input:hover,
+input:focus {
+  border: 1px solid #000;
+  outline: transparent;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+  color: var(--txt-color);
+}
+
+label:last-of-type {
+  margin-bottom: 16px;
+}
+
+.login-form input {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.feedback-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 24px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.feedback-form textarea {
+  resize: none;
+  height: 90px;
+}
